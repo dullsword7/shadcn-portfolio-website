@@ -6,6 +6,7 @@ import { ProjectCard } from "./project-card"
 import GameJamGif from "@/public/images/GameJam.gif"
 import LinkSpinSlashGif from "@/public/images/LinkSpinSlash.gif"
 import Test from "@/public/images/LinkedInProfile.png"
+import Capy from "@/public/images/Capy.gif"
 
 // Sample project data - replace with your actual projects
 const projects = [
@@ -19,19 +20,19 @@ const projects = [
     tags: ["Next.js", "React", "Tailwind CSS"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/username/portfolio",
-    category: "web",
+    category: "software",
   },
   {
     id: 2,
     title: "Task Management App",
     description: "A full-stack application for managing tasks and projects with team collaboration features.",
     image: "/placeholder.svg?height=300&width=500",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "VrURfU546ls",
     gif: "",
     tags: ["React", "Node.js", "MongoDB", "Express"],
     liveUrl: "https://example.com/tasks",
     githubUrl: "https://github.com/username/task-app",
-    category: "web",
+    category: "software",
   },
   {
     id: 3,
@@ -43,7 +44,7 @@ const projects = [
     tags: ["JavaScript", "API", "CSS"],
     liveUrl: "https://example.com/weather",
     githubUrl: "https://github.com/username/weather-app",
-    category: "web",
+    category: "software",
   },
   {
     id: 4,
@@ -56,31 +57,7 @@ const projects = [
     tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
     liveUrl: "https://example.com/shop",
     githubUrl: "https://github.com/username/ecommerce",
-    category: "web",
-  },
-  {
-    id: 5,
-    title: "Mobile Fitness Tracker",
-    description: "A cross-platform mobile app for tracking workouts, nutrition, and fitness goals.",
-    image: "/placeholder.svg?height=300&width=500",
-    videoId: "",
-    gif: "",
-    tags: ["React Native", "Firebase", "Redux"],
-    liveUrl: "https://example.com/fitness",
-    githubUrl: "https://github.com/username/fitness-app",
-    category: "mobile",
-  },
-  {
-    id: 6,
-    title: "Data Visualization Dashboard",
-    description: "An interactive dashboard for visualizing complex datasets with customizable charts and filters.",
-    image: "/placeholder.svg?height=300&width=500",
-    videoId: "",
-    gif: "",
-    tags: ["D3.js", "React", "TypeScript"],
-    liveUrl: "https://example.com/dashboard",
-    githubUrl: "https://github.com/username/data-viz",
-    category: "data",
+    category: "cybersecurity",
   },
 ]
 
@@ -91,46 +68,38 @@ export default function PersonalProjects() {
 
   return (
     <section className="container py-12 mx-auto">
-      <div className="flex flex-col items-center mb-12 text-center">
+      <div className="flex flex-col items-center mb-10 text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-primary dark:text-primary-foreground">
           Personal Projects
         </h2>
-        <p className="max-w-2xl text-muted-foreground dark:text-gray-400">
-          A collection of projects I've built to showcase my skills and experience in web development, mobile
-          applications, and data visualization.
+        <p className="max-w-2xl text-2xl dark:text-gray-400">
+          A collection of projects I've built to showcase my skills and experience in software development and cybersecurity.
         </p>
       </div>
 
       <Tabs defaultValue="all" className="w-full mb-8">
         <div className="flex justify-center">
-          <TabsList className="bg-secondary dark:bg-gray-800">
+          <TabsList className="bg-secondary dark:bg-gray-800 h-12">
             <TabsTrigger
               value="all"
               onClick={() => setFilter("all")}
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground dark:data-[state=active]:bg-primary dark:data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:dark:bg-gray-800 dark:data-[state=active]:bg-primary text-xl"
             >
               All Projects
             </TabsTrigger>
             <TabsTrigger
               value="web"
-              onClick={() => setFilter("web")}
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground dark:data-[state=active]:bg-primary dark:data-[state=active]:text-primary-foreground"
+              onClick={() => setFilter("software")}
+              className="data-[state=active]:dark:bg-gray-800 dark:data-[state=active]:bg-primary text-xl"
             >
-              Web
+              Software Development
             </TabsTrigger>
             <TabsTrigger
               value="mobile"
-              onClick={() => setFilter("mobile")}
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground dark:data-[state=active]:bg-primary dark:data-[state=active]:text-primary-foreground"
+              onClick={() => setFilter("cybersecurity")}
+              className="data-[state=active]:dark:bg-gray-800 dark:data-[state=active]:bg-primary text-xl"
             >
-              Mobile
-            </TabsTrigger>
-            <TabsTrigger
-              value="data"
-              onClick={() => setFilter("data")}
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground dark:data-[state=active]:bg-primary dark:data-[state=active]:text-primary-foreground"
-            >
-              Data
+              Cybersecurity
             </TabsTrigger>
           </TabsList>
         </div>

@@ -11,7 +11,7 @@ export default function IntroSection() {
   const githubUsername = "github.com/dullsword7"
 
   return (
-    <section className="py-12 md:py-16 lg:py-20">
+    <section className="py-5 md:py-5 lg:py-5">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
           <div className="flex flex-col items-center lg:items-start gap-6 lg:w-1/5">

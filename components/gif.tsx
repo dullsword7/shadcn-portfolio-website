@@ -9,9 +9,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 export default function Gif() {
     return (
         <Card className="overflow-hidden flex flex-col h-full transition-all hover:shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <Image src={Capy} alt="hello" height={500} width={500}></Image>
-            <Image src={Frisbee} alt="hello" height={500} width={500}></Image>
-            <Image src={Hello} alt="hello" height={500} width={500}></Image>
+            <Image
+                src={Hello}
+                alt="hello"
+                height={500}
+                width={500}>
+            </Image>
+            <Image
+                src={Capy}
+                alt="hello"
+                height={500}
+                width='100%'>
+            </Image>
+            <Image
+                src={Frisbee}
+                alt="hello"
+                height={500}
+                width='100%'>
+            </Image>
         </Card>
     )
 }
