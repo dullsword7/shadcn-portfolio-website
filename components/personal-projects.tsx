@@ -14,6 +14,9 @@ import NotesApp from "@/public/images/notesbkg.png"
 import ChessAnalysis from "@/public/images/chessanalysisstate3.png"
 import VRDemo from "@/public/images/demo1.png"
 import DiscordBot from "@/public/images/DiscordIcon.png"
+import LinuxPenguin from "@/public/images/LinuxPenguin.png"
+import PenTesting from "@/public/images/PenTesting.png"
+import Splunk from "@/public/images/splunk.png"
 
 // List of all projects, simply add another project by copy pasting { id:1, title:"Title", etc ...}
 const projects = [
@@ -127,40 +130,40 @@ const projects = [
   },
   {
     id: 10,
-    title: "E-commerce Platform",
+    title: "Linux Hardening",
     description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and payment processing.",
-    image: "/placeholder.svg?height=300&width=500",
+      "In this project I simulated auditing and fixing a fictional orginazation's poorly configured Linux Server. This was accomplished by enforcing password policies and sudo permissions, validating permissions on files and directories, securing SSH settings, updating system packages, disabling unecessary services, enabling logging, and automating hardening tasks through the use of bash scripts and cron jobs.",
+    image: LinuxPenguin,
     videoId: "",
     gif: "",
-    tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-    liveUrl: "",
+    tags: ["Linux", "Bash"],
+    liveUrl: "https://docs.google.com/document/d/13DtJ8-EY_jtXQyTSOaPn7L2KdqTo43F0naIgB_Tydxs/edit?usp=drive_link",
     githubUrl: "",
     category: "cybersecurity",
   },
   {
     id: 11,
-    title: "E-commerce Platform",
+    title: "Penetration Testing",
     description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and payment processing.",
-    image: "/placeholder.svg?height=300&width=500",
+      "In this project I simulated attacking a fictional organization's web application, Linux servers, and Window servers. The web application was exploited using XSS and the tool Metasploit was used to attack the Linux and Windows servers mainly through the use of Remote Code Execution. This is only a brief overview of some of the weaknesses found. A full summary of the techniques, tools, and exploits used can be found in the Penetration Testing report below.",
+    image: PenTesting,
     videoId: "",
     gif: "",
-    tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-    liveUrl: "",
+    tags: ["Penetration Testing", "Linux", "Windows", "Metasploit MSFConsole", "Meterpreter"],
+    liveUrl: "https://docs.google.com/document/d/1lugMLE7HnsKyftYZwoiHU5OJQuN5AqAGyJl3YWtcP8c/edit?usp=drive_link",
     githubUrl: "",
     category: "cybersecurity",
   },
   {
     id: 12,
-    title: "E-commerce Platform",
+    title: "Security Monitoring Environment",
     description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and payment processing.",
-    image: "/placeholder.svg?height=300&width=500",
+      "In this project I simulated building a custom security monitoring environment for a fictional orginzation. Splunk was used to automically set up a dashboard, reports, and alerts, used for monitoring Windows signatures and users, and HTTP Methods and response codes from the Apache logs. A full presentation containing the reports, alerts, and an attack analysis can be accessed though the link below.",
+    image: Splunk,
     videoId: "",
     gif: "",
-    tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-    liveUrl: "",
+    tags: ["Splunk", "Security Monitoring"],
+    liveUrl: "https://docs.google.com/presentation/d/1YU3H-NlhxLisb_n4pX7iPUrnzja3EfChWAK-3tHKLZg/edit?usp=drive_link",
     githubUrl: "",
     category: "cybersecurity",
   },
