@@ -23,14 +23,16 @@ export function ProjectCard({ project }) {
                         src={project.gif || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-contain transition-transform hover:scale-105"
                     />
                 ) : (
                     <Image
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-contain transition-transform hover:scale-105"
                     />
                 )}
             </div>
