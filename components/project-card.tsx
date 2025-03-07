@@ -7,12 +7,17 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 
+// Modify this file to change how individual projects are displayed
 export function ProjectCard({ project }) {
+
+    // only renders the CardFooter if either a github or demo url exists
+    const hasLinks = project.githubUrl || project.liveUrl
+
     return (
         <Card className="overflow-hidden flex flex-col h-full transition-all hover:shadow-md dark:bg-gray-800 dark:border-gray-700">
             <div className="relative aspect-video overflow-hidden">
                 {project.videoId ? (
-                    <YouTubeEmbed videoid={project.videoId} height={225} width="100%" params="rel=0" />
+                    <YouTubeEmbed videoid={project.videoId} height={225} width="100%" params="rel=0&mute=1" />
                 ) : project.gif ? (
                     <Image
                         src={project.gif || "/placeholder.svg"}
@@ -46,29 +51,35 @@ export function ProjectCard({ project }) {
                     ))}
                 </div>
             </CardContent>
-            <CardFooter className="flex justify-between">
-                <Button
-                    variant="outline"
-                    size="sm"
-                    asChild
-                    className="dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
-                >
-                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                    </Link>
-                </Button>
-                <Button
-                    size="sm"
-                    asChild
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
-                >
-                    <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                    </Link>
-                </Button>
-            </CardFooter>
+            {hasLinks && (
+                <CardFooter className="flex justify-between">
+                    {project.githubUrl && (
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            asChild
+                            className="dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+                        >
+                            <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Github className="mr-2 h-4 w-4" />
+                                Code
+                            </Link>
+                        </Button>
+                    )}
+                    {project.liveUrl && (
+                        <Button
+                            size="sm"
+                            asChild
+                            className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
+                        >
+                            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="mr-2 h-4 w-4" />
+                                Live Demo
+                            </Link>
+                        </Button>
+                    )}
+                </CardFooter>
+            )}
         </Card>
     )
 }

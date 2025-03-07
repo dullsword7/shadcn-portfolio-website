@@ -8,7 +8,7 @@ import LinkSpinSlashGif from "@/public/images/LinkSpinSlash.gif"
 import Test from "@/public/images/LinkedInProfile.png"
 import Capy from "@/public/images/Capy.gif"
 
-// Sample project data - replace with your actual projects
+// List of all projects, simply add another project by copy pasting { id:1, title:"Title", etc ...}
 const projects = [
   {
     id: 1,
@@ -18,8 +18,8 @@ const projects = [
     videoId: "",
     gif: LinkSpinSlashGif, // New field for GIF URL
     tags: ["Next.js", "React", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/portfolio",
+    liveUrl: "",
+    githubUrl: "",
     category: "software",
   },
   {
@@ -30,8 +30,8 @@ const projects = [
     videoId: "VrURfU546ls",
     gif: "",
     tags: ["React", "Node.js", "MongoDB", "Express"],
-    liveUrl: "https://example.com/tasks",
-    githubUrl: "https://github.com/username/task-app",
+    liveUrl: "",
+    githubUrl: "",
     category: "software",
   },
   {
@@ -42,8 +42,8 @@ const projects = [
     videoId: "",
     gif: GameJamGif, // Example GIF URL
     tags: ["JavaScript", "API", "CSS"],
-    liveUrl: "https://example.com/weather",
-    githubUrl: "https://github.com/username/weather-app",
+    liveUrl: "",
+    githubUrl: "",
     category: "software",
   },
   {
@@ -55,8 +55,8 @@ const projects = [
     videoId: "",
     gif: "",
     tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-    liveUrl: "https://example.com/shop",
-    githubUrl: "https://github.com/username/ecommerce",
+    liveUrl: "",
+    githubUrl: "",
     category: "cybersecurity",
   },
 ]

@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import LinkedInProfilePicture from "@/public/images/LinkedInProfile.png"
 
+// Intro Section of the website
 export default function IntroSection() {
   const email = "alanwu4232@gmail.com"
   const linkedinUsername = "linkedin.com/in/alan-wu7"
