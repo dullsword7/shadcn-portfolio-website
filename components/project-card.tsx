@@ -1,65 +1,74 @@
-"use client"
-
+import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { cn } from "@/lib/utils"
+import { YouTubeEmbed } from "@next/third-parties/google"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 
-interface ProjectCardProps {
-  title: string
-  description: string
-  imageUrl: string
-  technologies: string[]
-  liveUrl?: string
-  githubUrl?: string
-  featured?: boolean
+export function ProjectCard({ project }) {
+    return (
+        <Card className="overflow-hidden flex flex-col h-full transition-all hover:shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="relative aspect-video overflow-hidden">
+                {project.videoId ? (
+                    <YouTubeEmbed videoid={project.videoId} height={225} width="100%" params="rel=0" />
+                ) : project.gif ? (
+                    <Image
+                        src={project.gif || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform hover:scale-105"
+                    />
+                ) : (
+                    <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform hover:scale-105"
+                    />
+                )}
+            </div>
+            <CardHeader>
+                <CardTitle className="text-primary dark:text-primary-foreground">{project.title}</CardTitle>
+                <CardDescription className="dark:text-gray-400">{project.description}</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow">
+                <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                        <Badge
+                            key={tag}
+                            variant="secondary"
+                            className="bg-secondary text-secondary-foreground dark:bg-gray-700 dark:text-gray-200"
+                        >
+                            {tag}
+                        </Badge>
+                    ))}
+                </div>
+            </CardContent>
+            <CardFooter className="flex justify-between">
+                <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    className="dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+                >
+                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        Code
+                    </Link>
+                </Button>
+                <Button
+                    size="sm"
+                    asChild
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
+                >
+                    <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                    </Link>
+                </Button>
+            </CardFooter>
+        </Card>
+    )
 }
-
-export default function ProjectCard({
-  title = "Project Title",
-  description = "A short description of the project and what technologies were used to build it.",
-  imageUrl = "/placeholder.svg?height=300&width=600",
-  technologies = ["React", "TypeScript", "Tailwind CSS"],
-  liveUrl,
-  githubUrl,
-  featured = false,
-}: ProjectCardProps) {
-  return (
-    <Card className={cn("overflow-hidden transition-all", featured ? "border-primary" : "")}>
-      <div className="relative aspect-video w-full overflow-hidden">
-        <Image
-          src={imageUrl || "/placeholder.svg"}
-          alt={`Screenshot of ${title}`}
-          fill
-          className="object-cover transition-transform hover:scale-105"
-        />
-      </div>
-      <CardHeader>
-        <div className="flex items-start justify-between">
-          <div>
-            <CardTitle className="text-xl font-bold">{title}</CardTitle>
-            <CardDescription className="mt-2 line-clamp-2">{description}</CardDescription>
-          </div>
-          {featured && (
-            <Badge variant="default" className="ml-2">
-              Featured
-            </Badge>
-          )}
-        </div>
-      </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <Badge key={tech} variant="secondary">
-              {tech}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
-
