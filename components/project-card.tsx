@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 
 // Modify this file to change how individual projects are displayed
-export function ProjectCard({ project }) {
+export function ProjectCard({ project } : { project:any }) {
 
     // only renders the CardFooter if either a github or demo url exists
     const hasLinks = project.githubUrl || project.liveUrl
@@ -17,7 +17,7 @@ export function ProjectCard({ project }) {
         <Card className="overflow-hidden flex flex-col h-full transition-all hover:shadow-md dark:bg-gray-800 dark:border-gray-700">
             <div className="relative aspect-video overflow-hidden">
                 {project.videoId ? (
-                    <YouTubeEmbed videoid={project.videoId} height={225} width="100%" params="rel=0&mute=1" />
+                    <YouTubeEmbed videoid={project.videoId} height={225} params="rel=0&mute=1" />
                 ) : project.gif ? (
                     <Image
                         src={project.gif || "/placeholder.svg"}
@@ -42,7 +42,7 @@ export function ProjectCard({ project }) {
             </CardHeader>
             <CardContent className="flex-grow">
                 <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
+                    {project.tags.map((tag:any) => (
                         <Badge
                             key={tag}
                             variant="secondary"
