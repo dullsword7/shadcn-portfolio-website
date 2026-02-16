@@ -58,15 +58,17 @@ export default function IntroSection() {
                 <p className="text-muted-foreground text-2xl">
                     Hi, I'm Alan! I graduated from the Ohio State University with a Bachelor's in Computer Science and Engineering.
                 </p>
-                <p className="text-muted-foreground text-2xl">
+                <p className="mt-4 text-muted-foreground text-2xl">
+                    Currently I am enrolled at Wright State University and working on obtaining my Master's in Computer Science.
+                </p>
+                <p className="mt-4 text-muted-foreground text-2xl">
                     I love to create software and tools using all kinds of programming languages. C#, Python, and JavaScript are my go to choices for designing games, apps, and websites.
                 </p>
                 <p className="mt-4 text-muted-foreground text-2xl">
-                    I have also developed a keen interest in Cybersecurity and am currently enrolled in Ohio State's Cybersecurity bootcamp.  I will soon being taking the CompTIA Security+ exam to obtain
-                    my Security+ certificate.
+                    I have also developed a keen interest in cybersecurity and obtained a certificate at Ohio State's Cybersecurity bootcamp.
                 </p>
                 <p className="mt-4 text-muted-foreground text-2xl">
-                    Outside of programming, I enjoy chess, exercising, and video games! Feel free to reach out to me via email or LinkedIn!
+                    Outside of programming, I enjoy language learning, chess, exercising, and video games! Feel free to reach out to me via email or LinkedIn!
                     Below are some of the projects I'm most proud of.
                 </p>
               </div>
